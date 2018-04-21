@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<ul>
+				<li>
+				<h2>
+					Nombre: 
+				</h2>
+					<%= @capture.pokemon.name %>
+				</li>
+				<li>
+					<h2>
+					Entrenador: 
+					</h2>
+					<%= @capture.user.email %>
+				</li>
+				<li>
+					<h2>
+					Fecha 
+					</h2>
+					<%= @capture.created_at %>
+				</li>
+				<li>
+					<h2>
+						Nivel: 
+					</h2>
+					<%= @capture.leve %>
+				</li>
+			</ul>
+
+			<%= link_to 'volver', pages_index_path %>
+		</div>
+	</div>
+</div>
+

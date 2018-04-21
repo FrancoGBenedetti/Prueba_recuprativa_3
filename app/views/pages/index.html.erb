@@ -1,0 +1,67 @@
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+			  <tr>
+			    <th>Nombre pokemon</th>
+			    <th> ... </th>
+			  </tr>
+			  <% @pokemons.each do |poke| %>
+			    <tr>
+			      <td><%= poke.name %></td>
+			      <td><%= link_to 'Catch!', pokemon_captures_path(poke.id),class: "btn btn-danger", method: :post %>
+			      	
+			      </td>
+			    </tr>
+			  <% end %>
+			</table>
+		</div>
+
+		<div class="col-md-6">
+			<table class="table">
+				<tr>
+					<th>
+						Nombre Pokemon
+					</th>
+					<th>
+						...
+					</th>
+					<th>
+						...
+					</th>
+					<th>
+						Level
+					</th>
+				</tr>
+
+				<% @user_caps.each do |cap| %>
+					<tr>
+						<td>
+							<%= link_to cap.pokemon.name, cap %>
+						</td>
+
+						<td>
+							<%= link_to 'Level Up!', level_up_pokemon_capture_path(cap.pokemon.id, cap.id),class: "btn btn-success", method: :post %>
+								
+						</td>
+						<td>
+							<%= link_to 'Free!', captures_destroy_pokemon_path(cap.pokemon.id),class: "btn btn-warning", method: :delete %>
+							
+						</td>
+
+						<td>
+							<h2>
+								<%= cap.leve %>
+							</h2>
+							
+						</td>
+					</tr>
+				<% end %>
+
+
+			</table>
+		</div>
+	</div>
+</div>
